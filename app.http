@@ -1,0 +1,70 @@
+API 1 
+
+
+SCENARIO 1
+Returns a list of all todos whose status is 'TO DO'...
+GET http://localhost:3000/todos/?status=TO%20DO
+
+
+SCENARIO 2 
+Returns a list of all todos whose priority is 'HIGH'
+GET http://localhost:3000/todos/?priority=HIGH
+
+SCENARIO 3 
+Returns a list of all todos whose priority is 'HIGH' and status is 'IN PROGRESS'
+GET http://localhost:3000/todos/?priority=HIGH&status=IN%20PROGRESS
+
+SCENARIO 4 
+Returns a list of all todos whose todo contains 'Play' text
+GET http://localhost:3000/todos?search_q=play
+
+
+######################################################### 
+
+API 2
+Return the specific based on specifi id.... 
+GET http://localhost:3000/todos/10/
+
+
+######################################################### 
+
+API 3 
+Create a todo  in todo  table
+
+POST http://localhost:3000/todos/
+Content-Type:application/json
+{
+  "id": 10,
+  "todo": "Finalize event theme",
+  "priority": "LOW",
+  "status": "TO DO"
+}
+
+
+##################################################### 
+
+API 4 
+Update the table... 
+
+SCENARIO 1 
+PUT http://localhost:3000/todos/1/
+Content-Type:application/json
+{ "status": "DONE" }
+
+
+SCENARIO 2 
+PUT http://localhost:3000/todos/1/ 
+Content-Type:application/json
+{ "priority": "HIGH" } 
+
+SCENARIO 3 
+PUT http://localhost:3000/todos/1/ 
+Content-Type:application/json 
+{ "todo": "Some task" }
+
+
+#################################################### 
+
+API 5 
+Delete a todo table based on the todo Id .. 
+DELETE http://localhost:3000/todos/3/
